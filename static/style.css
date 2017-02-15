@@ -1,3 +1,18 @@
-p {
-  color: blue;
+.container {
+  padding-top: 20px;
+}
+
+.tasks .task {
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.tasks .task .content {
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  white-space: normal;
 }
