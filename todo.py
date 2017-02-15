@@ -147,5 +147,6 @@ def mistake404(code):
 def server_static(filepath):
     return static_file(filepath, root='static')
 
+dev = os.environ.get('BOTTLE_ENV') == 'development'
 # Webサーバーを立ち上げて待機する
-run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)), debug=dev, reloader=dev)
