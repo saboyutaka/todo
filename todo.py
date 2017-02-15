@@ -1,5 +1,11 @@
 import sqlite3
 from bottle import route, run, debug, template, request, static_file, error
+import os.path
+
+if not os.path.exists("todo.db"):
+    con = sqlite3.connect('todo.db')
+    con.execute("CREATE TABLE todo (id INTEGER PRIMARY KEY, task char(100) NOT NULL, status bool NOT NULL)")
+    con.commit()
 
 @route('/hello')
 def hello():
