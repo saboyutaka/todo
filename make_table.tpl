@@ -1,7 +1,10 @@
 % rebase('base.tpl', title='Page Title')
 <div class="row">
   <div class="col s12">
-    <a href="/new" class="waves-effect waves-light btn right new-button">New Todo</a>
+    <a href="/new" class="waves-effect waves-light btn right new-button">
+      <i class="material-icons right">note_add</i>
+      New Todo
+    </a>
   </div>
 </div>
 <div class="row tasks">
