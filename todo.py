@@ -1,6 +1,6 @@
 import sqlite3
 from bottle import route, run, debug, template, request, static_file, error
-import os.path
+import os
 
 if not os.path.exists("todo.db"):
     con = sqlite3.connect('todo.db')
@@ -148,4 +148,4 @@ def server_static(filepath):
     return static_file(filepath, root='static')
 
 # Webサーバーを立ち上げて待機する
-run()
+run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
